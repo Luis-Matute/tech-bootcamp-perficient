@@ -24,9 +24,9 @@ public class BlogPostEntity {
 	@Column
 	private String content;
 	
-	@ManyToOne
-	@JoinColumn(name="author_id", nullable=false)
-	private AuthorEntity author;
+//	@ManyToOne
+//	@JoinColumn(name="author_id", nullable=false)
+//	private AuthorEntity author;
 	
 	public BlogPostEntity() {}
 	
@@ -61,12 +61,12 @@ public class BlogPostEntity {
 		this.content = content;
 	}
 
-	public AuthorEntity getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(AuthorEntity author) {
-		this.author = author;
-	}
+//	public AuthorEntity getAuthor() {
+//		return author;
+//	}
+//
+//	public void setAuthor(AuthorEntity author) {
+//		this.author = author;
+//	}
 	
 }
