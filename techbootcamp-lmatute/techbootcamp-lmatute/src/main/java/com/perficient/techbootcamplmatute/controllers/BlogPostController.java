@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.perficient.techbootcamplmatute.entities.AuthorEntity;
 import com.perficient.techbootcamplmatute.entities.BlogPostEntity;
 import com.perficient.techbootcamplmatute.services.BlogPostService;
 
@@ -32,9 +33,11 @@ public class BlogPostController {
 	
 	@PostMapping("/createBlogPost")
 	public void createBlogPost(@RequestBody BlogPostEntity blogPostEntity) {
-		System.out.println(blogPostEntity);
+		System.out.println(blogPostEntity);		
 		blogPostService.save(blogPostEntity);
 	}
+	
+	
 	
 	@Autowired
 	public void setBlogPostRepository(BlogPostService blogPostService) {

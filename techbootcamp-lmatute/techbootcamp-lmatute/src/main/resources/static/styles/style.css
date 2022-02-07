@@ -88,3 +88,25 @@ li a:hover {
     border-color: #306FCF;
     outline: #306FCF;
 }
+
+.error-message {
+    display: none;
+    color: red;
+}
+
+.author-posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-username {
+    text-decoration: underline;
+}
+
+.author-description {
+    font-style: italic;
+}
+
+.author-container {
+    text-align: center;
+}
