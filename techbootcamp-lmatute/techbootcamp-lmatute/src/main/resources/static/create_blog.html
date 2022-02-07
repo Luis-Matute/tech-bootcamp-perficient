@@ -13,9 +13,9 @@
     </head>
 
     <body>
-        <div id="navigation-container">
-            <nav>
-                <ul>
+        <div id="navigation-container" class="navigation">
+            <nav id="navigation-bar" class="navigation">
+                <ul id="link-container" class="page-container">
                     <li><a href='index.html'>Home</a></li>
                     <li><a href='create_blog.html'>Create blog</a></li>
                 </ul>
@@ -24,18 +24,18 @@
 
         <label class="body-text">Create a blog!</label>
         <form method="POST" action="/index.html" id="createBlogForm">
-            <div>
+            <div class="input-container">
                 <label>Title:</label>
-                <input type="text" placeholder="Title" name="title">
+                <input type="text" placeholder="Title" name="title" minlength="5" maxlength="128" class="form-input">
             </div>
 
-            <div>
+            <div class="input-container">
                 <label>Content:</label>
-                <textarea placeholder="Your blog's content" name="content"></textarea>
+                <textarea placeholder="Your blog's content" name="content" minlength="12" maxlength="65535" class="form-input"></textarea>
             </div>
 
-            <div>
-                <input type="submit" value="Create Blog" id="#btn">
+            <div class="input-container">
+                <input type="submit" value="Create Blog" id="btn">
             </div>
         </form>
 

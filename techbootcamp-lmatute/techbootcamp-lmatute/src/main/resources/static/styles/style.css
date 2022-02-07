@@ -1,7 +1,90 @@
 body {
     font-family: 'Source Serif 4', sans-serif;
+    background-color: #30BECF;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .box {
     border: 2px solid black;
+}
+
+
+.navigation-container { 
+    display: flex;
+}
+
+.navigation {
+    display: flex;
+    width: 100%;
+    background-color: #306FCF;
+}
+
+.page-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+li a {
+    display: block;
+    padding: 16px 16px;
+}
+
+li a:hover {
+    background-color: #97b7e7;
+}
+
+
+#createBlogForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#btn {
+    background-color: #30CF90;
+    outline: none;
+    height: 30px;
+    width: 20%;
+    border: 1px solid #97b7e7;
+    border-radius: 20px;
+    align-self: center;
+}
+
+#btn:hover {
+    border: 2px solid #306FCF;
+    background-color: #97e7c7;
+}
+
+.form-input {
+    font-family: 'Source Serif 4', sans-serif;
+    font-size:22px;
+    padding:5px 10px;
+    background:none;
+    border:2px solid grey;
+    color: grey;
+    border-radius:0;
+    transition:border-color .25s ease, box-shadow .25s ease;
+}
+ 
+.form-input:focus {
+    border-color: #306FCF;
+    outline: #306FCF;
 }

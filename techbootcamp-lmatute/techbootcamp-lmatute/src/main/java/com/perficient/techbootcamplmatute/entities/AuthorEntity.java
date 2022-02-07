@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "authors")
 public class AuthorEntity {
@@ -22,10 +26,15 @@ public class AuthorEntity {
 	private String username;
 	
 	@Column
+	private String password;
+	
+	@Column
 	private String description;
 	
-//	@OneToMany(mappedBy="authors")
-//	private Set<BlogPostEntity> blog_posts;
+	@OneToMany(mappedBy="author")
+	//@JsonManagedReference
+	@JsonIgnoreProperties("author")
+	private Set<BlogPostEntity> blogPosts;
 	
 	public AuthorEntity() {}
 
@@ -57,14 +66,19 @@ public class AuthorEntity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public Set<BlogPostEntity> getBlogPosts() {
+		return blogPosts;
+	}
 
-//	public Set<BlogPostEntity> getArticles() {
-//		return blog_posts;
-//	}
-//
-//	public void setArticles(Set<BlogPostEntity> articles) {
-//		this.blog_posts = articles;
-//	}
+	public void setBlogPosts(Set<BlogPostEntity> blogPosts) {
+		this.blogPosts = blogPosts;
+	}
 	
 	
 }

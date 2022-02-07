@@ -9,6 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+
 // You can use the name on entity later for HQL queries.
 @Entity(name="blog_post")
 @Table(name = "blog_posts")
@@ -24,9 +29,11 @@ public class BlogPostEntity {
 	@Column
 	private String content;
 	
-//	@ManyToOne
-//	@JoinColumn(name="author_id", nullable=false)
-//	private AuthorEntity author;
+	@ManyToOne
+	@JoinColumn(name="author_id", nullable=false)
+	//@JsonBackReference
+	@JsonIgnoreProperties("blogPosts")
+	private AuthorEntity author;
 	
 	public BlogPostEntity() {}
 	
@@ -61,12 +68,12 @@ public class BlogPostEntity {
 		this.content = content;
 	}
 
-//	public AuthorEntity getAuthor() {
-//		return author;
-//	}
-//
-//	public void setAuthor(AuthorEntity author) {
-//		this.author = author;
-//	}
+	public AuthorEntity getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(AuthorEntity author) {
+		this.author = author;
+	}
 	
 }
